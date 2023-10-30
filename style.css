@@ -1,0 +1,13 @@
+.table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.unit {
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid red
+}
