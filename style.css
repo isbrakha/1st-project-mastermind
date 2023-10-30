@@ -33,6 +33,7 @@ body {
 .table {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+    position: relative;
 }
 
 .unit {
@@ -42,6 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .arrow-section {
