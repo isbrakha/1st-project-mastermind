@@ -7,7 +7,6 @@ body {
 }
 
 .btns-section {
-    border: 2px solid red;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
     grid-template-columns: 1fr 3fr 1fr;
@@ -15,9 +14,7 @@ body {
 
 .buttons {
     display: grid;
-    border: solid black;
     grid-template-columns: 1fr 1fr 1fr;
-   
     align-items: center;
     justify-items: center;
     grid-area: 2 / 2;
@@ -25,13 +22,12 @@ body {
 
 .table-section {
     padding-top: 20px;
-    border: 2px solid blue;
     display: grid;
     grid-template-columns: 1fr 6fr
 }
 
 .crowns-section {
-    border: solid gold
+
 }
 
 .table {
@@ -43,10 +39,15 @@ body {
     border: 2px solid black;
     height: 60px;
     background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrow-section {
     display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
@@ -60,9 +61,15 @@ img {
     border: 2px solid transparent;
 }
 
-.empty {
+.sol {
     border: 2px solid transparent;
     height: 60px;
+    position: center;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
 }
 
 .button{
@@ -73,7 +80,32 @@ img {
 }
 
 #brown{
-    background-color: brwon;
+    background-color: brown;
     border: 5px solid brown;
+}
+
+#yellow{
+    background-color: gold;
+    border: 5px solid gold;
+}
+
+#purple{
+    background-color: purple;
+    border: 5px solid purple;
+}
+
+#green{
+    background-color: green;
+    border: 5px solid green;
+}
+
+#red{
+    background-color: red;
+    border: 5px solid red;
+}
+
+#blue{
+    background-color: blue;
+    border: 5px solid blue;
 }
 
