@@ -1,14 +1,30 @@
 body {
+    background-color: #ff3ace
+    ;
     padding-top: 15px;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .btns-section {
     border: 2px solid red;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.buttons {
+    display: grid;
+    border: solid black;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+    align-items: center;
+    justify-items: center;
+    grid-area: 2 / 2;
 }
 
 .table-section {
+    padding-top: 20px;
     border: 2px solid blue;
     display: grid;
     grid-template-columns: 1fr 6fr
@@ -24,8 +40,9 @@ body {
 }
 
 .unit {
-    border: 3px solid black;
-    height: 50px;
+    border: 2px solid black;
+    height: 60px;
+    background-color: lightgrey;
 }
 
 .arrow-section {
@@ -33,17 +50,30 @@ body {
 }
 
 img {
-    height: 50px;
+    height: 60px;
     width: 100%;
     align-self: center;
 }
 
 .arrow {
-    border: 3px solid transparent;
-    height: 50px;
+    height: 60px;
+    border: 2px solid transparent;
 }
 
 .empty {
-    border: 3px solid transparent;
-    height: 50px;
+    border: 2px solid transparent;
+    height: 60px;
 }
+
+.button{
+    height: 50%;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+#brown{
+    background-color: brwon;
+    border: 5px solid brown;
+}
+
