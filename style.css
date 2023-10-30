@@ -1,13 +1,42 @@
-.table {
+body {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
+}
 
+.btns-section {
+    border: 2px solid red;
+}
+
+.table-section {
+    border: 2px solid blue;
+    display: grid;
+    grid-template-columns: 1fr 5fr
+}
+
+.crowns-section {
+    border: solid gold
+}
+
+.table {
+    padding: 10px 20px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
 }
 
 .unit {
-    display: flex;
-    text-align: right;
-    justify-content: flex-end;
-    align-items: center;
-    border: 1px solid red
+    border: 1px solid black;
+    height: 50px;
+}
+
+.arrow-section {
+    padding: 10px 0 0 0;
+    border: 1px solid brown
+}
+
+.arrow {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    width: 0;
+    height: 0;
 }
