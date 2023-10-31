@@ -67,7 +67,6 @@ function btnClickHandler(event) {
     
     if (a < tries.length) {
         if(i < tries[a].length) {
-            console.log(i)
             if (tries[a][i].hasChildNodes() === false) {
                 let peg = document.createElement('div')
                 peg.style.height = '80%'
@@ -86,19 +85,42 @@ function btnClickHandler(event) {
                 removeCurtain()
                 console.log('You Win')
             } else {
+                let notBlack = []
                 if (k < 4) {
-                    for (let j = 0; j < guessCode.length; j++) {
+                    for (let j = 0; j < 4; j++) {
                         if (guessCode[j] === secretCode[j]) {
                             let peg = document.createElement('div')
                             peg.style.height = '60%'
                             peg.style.width = '70%'
                             peg.style.borderRadius = '50%'
                             peg.style.position = 'center'
-                            peg.style.backgroundColor ='black'                                               
-                            feedBack[k].appendChild(peg)
+                            peg.style.backgroundColor ='black'
+                            feedBack[k].appendChild(peg)                                           
+                        } else {
+                            notBlack.push(secretCode[j])
+                            console.log("this is notBlack = " + notBlack)                           
+                        } 
+                    }
+
+                    for (let j = 0; j < 4; j++) {
+                        for (let color of notBlack) {
+                            if (color === guessCode[j]) {
+                                console.log(color, guessCode[j])
+                                let peg = document.createElement('div')
+                                peg.style.height = '60%'
+                                peg.style.width = '70%'
+                                peg.style.borderRadius = '50%'
+                                peg.style.position = 'center'
+                                peg.style.backgroundColor ='white'
+                                feedBack[k].appendChild(peg)
+                                let idx = notBlack.indexOf(guessCode[j])
+                                notBlack.splice(idx, 1) 
+                            }
+
                         }
-                    } 
-                    k++
+                    }
+
+                k++
                 }
             }
             guessCode =[]
@@ -111,11 +133,7 @@ function btnClickHandler(event) {
 
 function init() {
     secretCodeGen()
-    createCurtain()
-    let i = 0;
-    let a = 0;
-    let j = 0;
-    let k = 0;
+   //  createCurtain()
 }
 
 init()
