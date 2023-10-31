@@ -15,6 +15,7 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
     grid-area: 2 / 2;
@@ -82,32 +83,72 @@ img {
 }
 
 #brown{
+    margin-bottom: 2.5px;
+    align-self: end;
     background-color: brown;
     border: 5px solid brown;
 }
 
-#yellow{
+#gold{
+    margin-bottom: 2.5px;
+    align-self: end;
     background-color: gold;
     border: 5px solid gold;
 }
 
 #purple{
+    margin-bottom: 2.5px;
+    align-self: end;
     background-color: purple;
     border: 5px solid purple;
 }
 
 #green{
+    margin-top: 2.5px;
+    align-self: start;
     background-color: green;
     border: 5px solid green;
 }
 
 #red{
+    margin-top: 2.5px;
+    align-self: start;
     background-color: red;
     border: 5px solid red;
 }
 
 #blue{
+    margin-top: 2.5px;
+    align-self: start;
     background-color: blue;
     border: 5px solid blue;
 }
 
+button {
+    align-self: flex-start;
+    margin-left: 0px;
+    width: 150%;
+    background-color: rgb(96, 22, 166);
+    color: white;
+}
+
+#delete {
+    grid-area: 3 / 3;
+    height: 40px;
+    font-size: 20px;
+}
+
+#check {
+    height: 40px;
+    font-size: 20px;
+}
+
+.fb{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.position {
+    height: 100px;
+    width: auto;
+}
