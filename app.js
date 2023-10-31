@@ -90,10 +90,11 @@ function btnClickHandler(event) {
                     for (let j = 0; j < guessCode.length; j++) {
                         if (guessCode[j] === secretCode[j]) {
                             let peg = document.createElement('div')
-                            peg.style.height = '80%'
-                            peg.style.width = '80%'
+                            peg.style.height = '60%'
+                            peg.style.width = '70%'
                             peg.style.borderRadius = '50%'
-                            peg.style.backgroundColor ='black'
+                            peg.style.position = 'center'
+                            peg.style.backgroundColor ='black'                                               
                             feedBack[k].appendChild(peg)
                         }
                     } 

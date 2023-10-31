@@ -146,9 +146,7 @@ button {
 .fb{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center
 }
 
-.position {
-    height: 100px;
-    width: auto;
-}
