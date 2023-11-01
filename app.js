@@ -18,6 +18,7 @@ const tries = [firstTry, secondTry, thirdTry, fourthTry, fifthTry, sixthTry, sev
 
 // ------ event listener -------//
 pegButtons.forEach((button) => button.addEventListener('click', btnClickHandler))
+checkButton.addEventListener('click', checkGuess)
 
 
 /// -------functions------
@@ -66,7 +67,8 @@ let k = 0;
 function btnClickHandler(event) {
     
     if (a < tries.length) {
-        if(i < tries[a].length) {
+        if(i < 4) {
+            console.log(i)
             if (tries[a][i].hasChildNodes() === false) {
                 let peg = document.createElement('div')
                 peg.style.height = '80%'
@@ -79,51 +81,64 @@ function btnClickHandler(event) {
             }  
 
         } else {
-            a++
-            i = 0
-            if (guessCode.join() === secretCode.join()) {
-                removeCurtain()
-                console.log('You Win')
-            } else {
-                let notBlack = []
-                if (k < 4) {
-                    for (let j = 0; j < 4; j++) {
-                        if (guessCode[j] === secretCode[j]) {
-                            let peg = document.createElement('div')
-                            peg.style.height = '60%'
-                            peg.style.width = '70%'
-                            peg.style.borderRadius = '50%'
-                            peg.style.position = 'center'
-                            peg.style.backgroundColor ='black'
-                            feedBack[k].appendChild(peg)                                           
-                        } else {
-                            notBlack.push(secretCode[j])
-                            console.log("this is notBlack = " + notBlack)                           
-                        } 
-                    }
+           
+            // if (guessCode.join() === secretCode.join()) {
+            //     removeCurtain()
+            //     console.log('You Win')
+            // } else {
+            //     let notBlack = []
+            //     let blackPegs = []
+            //     if (k < 4) {
+            //         for (let j = 0; j < 4; j++) {
+            //             if (guessCode[j] === secretCode[j]) {
+            //                 let peg = document.createElement('div')
+            //                 peg.style.height = '60%'
+            //                 peg.style.width = '70%'
+            //                 peg.style.borderRadius = '50%'
+            //                 peg.style.position = 'center'
+            //                 peg.style.backgroundColor ='black'
+            //                 blackPegs.push(guessCode[j])
+            //                 feedBack[k].appendChild(peg)                                           
+            //             } else {
+            //                 notBlack.push(secretCode[j])
+            //                 console.log(notBlack)                          
+            //             } 
+            //         }
 
-                    for (let j = 0; j < 4; j++) {
-                        for (let color of notBlack) {
-                            if (color === guessCode[j]) {
-                                console.log(color, guessCode[j])
-                                let peg = document.createElement('div')
-                                peg.style.height = '60%'
-                                peg.style.width = '70%'
-                                peg.style.borderRadius = '50%'
-                                peg.style.position = 'center'
-                                peg.style.backgroundColor ='white'
-                                feedBack[k].appendChild(peg)
-                                let idx = notBlack.indexOf(guessCode[j])
-                                notBlack.splice(idx, 1) 
-                            }
+            //         for (let i = 0; i < blackPegs.length; i++) {
+            //             for (color of notBlack) {    
+            //                 console.log(color)
+            //                 console.log(blackPegs)
+            //                 console.log(notBlack)
+            //                 if (blackPegs[i] === color) {
+            //                    let idx = notBlack.indexOf(color)
+            //                    console.log(idx)
+            //                    notBlack.splice(idx, 1)
+            //                 }
+            //             }
+            //         }
 
-                        }
-                    }
+            //         for (let j = 0; j < 4; j++) {
+            //             for (let color of notBlack) {
+            //                 if (color === guessCode[j]) {
+            //                     let peg = document.createElement('div')
+            //                     peg.style.height = '60%'
+            //                     peg.style.width = '70%'
+            //                     peg.style.borderRadius = '50%'
+            //                     peg.style.position = 'center'
+            //                     peg.style.backgroundColor ='white'
+            //                     feedBack[k].appendChild(peg)
+            //                     let idx = notBlack.indexOf(guessCode[j])
+            //                     notBlack.splice(idx, 1) 
+            //                 }
 
-                k++
-                }
-            }
-            guessCode =[]
+            //             }
+            //         }
+
+            //     k++
+            //     }
+            // }
+            
         }    
 
     } 
@@ -144,4 +159,68 @@ function clear() {
 
 function feedback () {
 
+}
+k = 0
+function checkGuess() {
+    console.log(i)
+    if (i < 4) {
+        alert("Fill the row to proceed!")
+    } else {
+    i = 0
+    a++
+        if (guessCode.join() === secretCode.join()) {
+            removeCurtain()
+            console.log('You Win')
+        } else {
+            let notBlack = []
+            let blackPegs = []       
+            for (let j = 0; j < 4; j++) {
+                if (guessCode[j] === secretCode[j]) {
+                    let peg = document.createElement('div')
+                    peg.style.height = '60%'
+                    peg.style.width = '70%'
+                    peg.style.borderRadius = '50%'
+                    peg.style.position = 'center'
+                    peg.style.backgroundColor ='black'
+                    blackPegs.push(guessCode[j])
+                    feedBack[k].appendChild(peg)                                           
+                } else {
+                    notBlack.push(secretCode[j])
+                    console.log(notBlack)                          
+                } 
+            }
+
+            for (let i = 0; i < blackPegs.length; i++) {
+                for (color of notBlack) {    
+                    console.log(color)
+                    console.log(blackPegs)
+                    console.log(notBlack)
+                    if (blackPegs[i] === color) {
+                    let idx = notBlack.indexOf(color)
+                    console.log(idx)
+                    notBlack.splice(idx, 1)
+                    }
+                }
+            }
+
+            for (let j = 0; j < 4; j++) {
+                for (let color of notBlack) {
+                    if (color === guessCode[j]) {
+                        let peg = document.createElement('div')
+                        peg.style.height = '60%'
+                        peg.style.width = '70%'
+                        peg.style.borderRadius = '50%'
+                        peg.style.position = 'center'
+                        peg.style.backgroundColor ='white'
+                        feedBack[k].appendChild(peg)
+                        let idx = notBlack.indexOf(guessCode[j])
+                        notBlack.splice(idx, 1) 
+                    }
+
+                }
+            }
+            k++
+        } 
+    }
+    guessCode =[]   
 }
