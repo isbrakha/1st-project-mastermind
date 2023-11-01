@@ -12,6 +12,14 @@ const secretCodeRow = document.querySelectorAll('.solution')
 const clearButton = document.querySelector('#delete')
 const checkButton = document.querySelector('#check')
 const feedBack = document.querySelectorAll('.fb')
+const arrowSect = document.querySelector('arrow-section')
+const goldArrow = document.createElement('img')
+goldArrow.src ='resources/images/arrow-gold.png'
+goldArrow.style.height = '60px'
+goldArrow.style.width = '100%'
+goldArrow.style.alignSelf = 'center'
+goldArrow.style.zIndex = '1'
+
 // ------constants-------//
 const coloredPegs = ['brown', 'gold', 'purple', 'green', 'red', 'blue']
 const tries = [firstTry, secondTry, thirdTry, fourthTry, fifthTry, sixthTry, seventhTry, eightTry]
@@ -80,66 +88,7 @@ function btnClickHandler(event) {
                 i++
             }  
 
-        } else {
-           
-            // if (guessCode.join() === secretCode.join()) {
-            //     removeCurtain()
-            //     console.log('You Win')
-            // } else {
-            //     let notBlack = []
-            //     let blackPegs = []
-            //     if (k < 4) {
-            //         for (let j = 0; j < 4; j++) {
-            //             if (guessCode[j] === secretCode[j]) {
-            //                 let peg = document.createElement('div')
-            //                 peg.style.height = '60%'
-            //                 peg.style.width = '70%'
-            //                 peg.style.borderRadius = '50%'
-            //                 peg.style.position = 'center'
-            //                 peg.style.backgroundColor ='black'
-            //                 blackPegs.push(guessCode[j])
-            //                 feedBack[k].appendChild(peg)                                           
-            //             } else {
-            //                 notBlack.push(secretCode[j])
-            //                 console.log(notBlack)                          
-            //             } 
-            //         }
-
-            //         for (let i = 0; i < blackPegs.length; i++) {
-            //             for (color of notBlack) {    
-            //                 console.log(color)
-            //                 console.log(blackPegs)
-            //                 console.log(notBlack)
-            //                 if (blackPegs[i] === color) {
-            //                    let idx = notBlack.indexOf(color)
-            //                    console.log(idx)
-            //                    notBlack.splice(idx, 1)
-            //                 }
-            //             }
-            //         }
-
-            //         for (let j = 0; j < 4; j++) {
-            //             for (let color of notBlack) {
-            //                 if (color === guessCode[j]) {
-            //                     let peg = document.createElement('div')
-            //                     peg.style.height = '60%'
-            //                     peg.style.width = '70%'
-            //                     peg.style.borderRadius = '50%'
-            //                     peg.style.position = 'center'
-            //                     peg.style.backgroundColor ='white'
-            //                     feedBack[k].appendChild(peg)
-            //                     let idx = notBlack.indexOf(guessCode[j])
-            //                     notBlack.splice(idx, 1) 
-            //                 }
-
-            //             }
-            //         }
-
-            //     k++
-            //     }
-            // }
-            
-        }    
+        }  
 
     } 
 
@@ -162,16 +111,19 @@ function feedback () {
 }
 k = 0
 function checkGuess() {
-    console.log(i)
-    if (i < 4) {
+    if (k >= 7 && guessCode.join() != secretCode.join()) {
+        alert('You ran out of guesses, you lose!')
+    } else if (i < 4) { 
         alert("Fill the row to proceed!")
-    } else {
-    i = 0
-    a++
+    } else {   
         if (guessCode.join() === secretCode.join()) {
             removeCurtain()
-            console.log('You Win')
+            alert('You Win')
+            // add code to re-initalize the game
+            // add crown win
         } else {
+            i = 0
+            a++
             let notBlack = []
             let blackPegs = []       
             for (let j = 0; j < 4; j++) {
@@ -224,3 +176,6 @@ function checkGuess() {
     }
     guessCode =[]   
 }
+
+arrowSect.appendChild(goldArrow)
+goldArrow.style.gridArea()

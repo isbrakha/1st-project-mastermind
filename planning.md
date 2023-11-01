@@ -2,11 +2,11 @@
  ## Choice of Game: ***Mastermind!*** 
  ### home-screen:
 
-<img src='screenshots/home-screen.png' width = "700">
+<img src='resources/screenshots/home-screen.png' width = "700">
 
 ### main-screen:
 
-<img src = 'screenshots/main-screen.png' width = 700>
+<img src = 'resources/screenshots/main-screen.png' width = 700>
 
 
 ## Pseudo-code:
