@@ -52,7 +52,6 @@ pegButtons.forEach((button) => button.addEventListener('click', btnClickHandler)
 checkButton.addEventListener('click', checkGuess)
 playAgainBtn.addEventListener('click', playAgain)
 clearButton.addEventListener('click', clearRow)
-clearButton.addEventListener('click', showHelp)
 closeHelpBtn.addEventListener('click', closeHelp)
 helpBtn.addEventListener('click', openHelp)
 
@@ -280,6 +279,5 @@ function closeHelp() {
 }
 
 function openHelp() {
-    console.log('hi')
     helpBox.style.visibility = 'visible'
 }
