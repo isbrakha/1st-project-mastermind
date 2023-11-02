@@ -171,7 +171,7 @@ function btnClickHandler(event) {
 
 function init() {
   secretCodeGen();
-  // createCurtain()
+  createCurtain()
 }
 
 init();
