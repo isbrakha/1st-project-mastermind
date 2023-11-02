@@ -142,7 +142,7 @@ function btnClickHandler(event) {
         if(i < 4) {
             if (tries[a][i].hasChildNodes() === false) {
                 if (guessCode.includes(event.target.id)){
-                    titleEl.innerText = "CAN'T PICK SAME COLOR TWICE"
+                    titleEl.innerText = "DON'T REPEAT COLORS!"
                     titleEl.style.color = "red"
                     titleEl.style.animation = 'cantBlink 1s linear infinite'
                     return
@@ -158,7 +158,7 @@ function btnClickHandler(event) {
                 
             }  
         } else {
-            titleEl.innerText = "CHECK BEFORE CONTINUING"
+            titleEl.innerText = "CHECK YOUR GUESS!"
             titleEl.style.color = "cyan"
             titleEl.style.animation = 'blinker 1s linear infinite'
         }
@@ -191,7 +191,7 @@ function checkGuess() {
         tableSection.appendChild(playAgainBtn)
         
     } else if (i < 4) { 
-        titleEl.innerText = "FILL THE ROW TO PROCEED!"
+        titleEl.innerText = "FILL ROW FIRST!"
         titleEl.style.color = "cyan"
         titleEl.style.animation = 'blinker 1s linear infinite'
     } else if (k < 7){   
@@ -227,10 +227,7 @@ function checkGuess() {
             }
 
             for (let i = 0; i < blackPegs.length; i++) {
-                for (color of notBlack) {    
-                    console.log(color)
-                    console.log("blackPegs array = "+ blackPegs)
-                    console.log("notBlack array = " + notBlack)
+                for (color of notBlack) {  
                     if (blackPegs[i] === color) {
                     let idx = notBlack.indexOf(color)
                     notBlack.splice(idx, 1)
@@ -268,6 +265,7 @@ function checkGuess() {
 function clearRow () {
     tries[a].forEach((unit) => unit.innerHTML = '')
     guessCode = []
+    i = 0
 }
 
 function showHelp() {

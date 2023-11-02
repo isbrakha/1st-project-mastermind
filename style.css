@@ -1,3 +1,8 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 body {
     background-color: #ff3ace
     ;
@@ -30,6 +35,8 @@ body {
     align-items: center;
     justify-items: center;
     grid-area: 2 / 2;
+    height: 100%;
+    width: auto;
 }
 
 .table-section {
@@ -53,6 +60,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
     position: relative;
+    justify-content: space-around;
+    align-content: space-around;
 }
 
 .unit {
@@ -148,6 +157,7 @@ body {
 #check, #delete {
     align-self: flex-start;
     margin-left: 0px;
+    height: 100%;
     width: 150%;
     background-color: rgb(96, 22, 166);
     color: white;
@@ -278,4 +288,41 @@ body {
     background-color: rgb(255, 215, 0, 0.7) ;
     font-size: 1.5rem;
     align-self: end;
+  }
+
+@media screen and (max-width: 1200px) {
+main {
+    flex-direction: column-reverse;
+}
+
+.table-section {
+    margin-left: -50px;
+}
+
+.crowns-section {
+    margin-bottom: -130px;
+    
+}
+
+.btns-section {
+    margin-top: -270px;
+}
+#title {
+    font-size: larger;
+}
+}
+
+@media screen and (max-width: 850px) {
+    .crowns-section {
+        margin-bottom: -100px;
+        
+    }
+
+    #crown-wins {
+        margin-top: -50px;
+    }
+
+    #title {
+        font-size: larger;
+    }
   }
