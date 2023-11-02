@@ -101,7 +101,6 @@ body {
     width: 70%;
     border: 1px solid black;
     border-radius: 50%;
-    /* z-index:-1; */
 }
 
 #brown{
@@ -176,6 +175,8 @@ body {
     grid-area: 2 / 2;
     place-self: center;
     font-family: 'barabara';
+    height: 100%;
+    width: auto;
 }
 
 @font-face {
