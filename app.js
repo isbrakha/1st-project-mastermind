@@ -17,6 +17,9 @@ const tableSection = document.querySelector('.table-section')
 const feedBackCells = document.querySelectorAll('.fb')
 const titleEl = document.querySelector('#title')
 const crownCountEl = document.querySelector('#crown-wins')
+const closeHelpBtn = document.querySelector('#help button')
+const helpBox = document.querySelector('#help')
+const helpBtn = document.querySelector('#helpBtn')
 
 
 // gold arrow creation and styles
@@ -48,6 +51,10 @@ const tries = [firstTry, secondTry, thirdTry, fourthTry, fifthTry, sixthTry, sev
 pegButtons.forEach((button) => button.addEventListener('click', btnClickHandler))
 checkButton.addEventListener('click', checkGuess)
 playAgainBtn.addEventListener('click', playAgain)
+clearButton.addEventListener('click', clearRow)
+clearButton.addEventListener('click', showHelp)
+closeHelpBtn.addEventListener('click', closeHelp)
+helpBtn.addEventListener('click', openHelp)
 
 // ------- variables ---------//
 let i = 0;
@@ -128,6 +135,7 @@ let guessCode = []
 
 
 function btnClickHandler(event) {
+    console.log('clicked')
     titleEl.innerText = "MASTERMIND"
     titleEl.style.color = "revert"
     titleEl.style.animation = 'revert'
@@ -258,3 +266,20 @@ function checkGuess() {
 }
 
 
+function clearRow () {
+    tries[a].forEach((unit) => unit.innerHTML = '')
+    guessCode = []
+}
+
+function showHelp() {
+    helpBox.style.visibility = 'visible'
+}
+
+function closeHelp() {
+    helpBox.style.visibility = 'hidden'
+}
+
+function openHelp() {
+    console.log('hi')
+    helpBox.style.visibility = 'visible'
+}
