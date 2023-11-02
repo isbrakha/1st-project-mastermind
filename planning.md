@@ -1,23 +1,16 @@
 # 1st-Project-Game 
  ## Choice of Game: ***Mastermind!*** 
- ### home-screen:
-
-<img src='resources/screenshots/home-screen.png' width = "700">
-
 ### main-screen:
 
 <img src = 'resources/screenshots/main-screen.png' width = 700>
 
 
 ## Pseudo-code:
-### Create home screen with html:
-   
-     - Button for play now will be take user to the main game
-     - Button for how to play will open a small "window-like" area on top of other elements to display game instruction
-## Main game
+
 ### Create elements:
     - Choice of pegs button 
     - Game table
+    - Button for how to play will open a small "window-like" area on top of other elements to display game instruction
     - Arrow pointing the are in table which represnt the guessing turn the playes is currently at, black arrows will point at each row, yellow arrow will point at current row
     - Last row of table will be hidden, at the end of the game it will show the secret code
     - Mastermind in text at bottom 

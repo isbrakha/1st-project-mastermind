@@ -1,18 +1,25 @@
-# 1st-Project-Game
-
-<Mastermind>
+# Mastermind
 Mastermind is a famous tabletop game invented in the 70's by Mordechai Meirowitz, a postmaster and telecomunications expert!
 It's a two player game where one player, (the code-maker) makes up a code, and the other player (the code-breaker) has to decypher it.
+In this version of the game the computer will take the role of the code-maker and the user will take the role of the code-breaker.
 
 
-Home screen: <screenshots/home-screen.png>
-Main Screen
+## Game screenshot:
+![Game-Screenshot](resources/screenshots/actual-game-sc.png)
 
-Getting startded
-(htts://deployedgame.mind)
-The code is made up using using 4 colored stones, organized in a specific squence, there are 6 colors to chose from.
-The code breaker makes a series of guesses, each guess will recieve feedback from the the code-maker, represented by either black or white stone, each black stone represnt a correct position and color, each white stone represents correct color but incorrect position.
-Version specifics:
-- The code breaker has 8 turns to guess the pattern
-- The computer will take the role of the code maker
-When you start the computer will have the code ready, go ahead and start guessing by clicking the colored stones in the order you want them placed, the computer will then give you feedback to consider for your next guess!
+## Technologies Used:
+ - Javascript, HTML, CSS
+
+## Getting Started
+- [Mastermind-Game-Link](https://isbrakha.github.io/1st-project-mastermind/)
+- Once you open the game click the question mark button for instructions on how to play
+
+## Next Steps
+- Add click animations for color buttons
+- Add sound for:
+    - Peg placement
+    - Check Guess
+    - Clear Guess
+    - Error sound when trying to place 2 pegs of same color in 1 row
+    - Celebration sound for Win Condition
+    - Sad sound for lose condition
