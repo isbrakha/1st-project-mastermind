@@ -96,6 +96,7 @@ function playAgain() {
   goldArrowDiv.style.gridArea = "1/1";
   checkButton.disabled = false;
   playAgainBtn.remove()
+  createCurtain()
 
 }
 
