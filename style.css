@@ -326,3 +326,9 @@ main {
         font-size: larger;
     }
   }
+
+  @media screen and (max-width: 400px) {
+    .btns-section {
+        margin-top: -400px;
+    }
+  }
