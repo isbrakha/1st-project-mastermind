@@ -41,6 +41,7 @@ playAgainBtn.innerText = "PLAY AGAIN!";
 playAgainBtn.style.font = "20px barabara";
 playAgainBtn.style.backgroundColor = "purple";
 playAgainBtn.style.color = "orange";
+playAgainBtn.style.zIndex = '1'
 // ------constants-------//
 const coloredPegs = ["brown", "gold", "purple", "green", "red", "blue"];
 const tries = [
@@ -94,6 +95,8 @@ function playAgain() {
   secretCodeGen();
   goldArrowDiv.style.gridArea = "1/1";
   checkButton.disabled = false;
+  playAgainBtn.remove()
+
 }
 
 function createCurtain() {
