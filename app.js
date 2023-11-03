@@ -95,6 +95,7 @@ function playAgain() {
   secretCodeGen();
   goldArrowDiv.style.gridArea = "1/1";
   checkButton.disabled = false;
+  clearButton.disabled = false;
   playAgainBtn.remove()
   createCurtain()
 
@@ -202,6 +203,8 @@ function checkGuess() {
     crownCount = 0;
     crownCountEl.innerText = crownCount;
     tableSection.appendChild(playAgainBtn);
+    checkButton.disabled = true;
+    clearButton.disabled = true;
   } else if (i < 4) {
     titleEl.innerText = "FILL ROW FIRST!";
     titleEl.style.color = "cyan";
@@ -216,6 +219,7 @@ function checkGuess() {
       crownCount++;
       crownCountEl.innerText = crownCount;
       checkButton.disabled = true;
+      clearButton.disabled = true;
     } else {
       i = 0;
       a++;
