@@ -370,5 +370,18 @@ main {
     #green{
         align-self: center;
     }
+
+    #check{
+        grid-area: 2/2;
+    }
+
+    #delete{
+        grid-area: 2/5;
+    }
+
+    #helpBtn {
+        grid-area: 2/3/2/5;
+        justify-self: center ;
+    }
   }
 
