@@ -273,6 +273,9 @@ function clearRow() {
   tries[a].forEach((unit) => (unit.innerHTML = ""));
   guessCode = [];
   i = 0;
+  titleEl.innerText = "MASTERMIND";
+  titleEl.style.color = "revert";
+  titleEl.style.animation = "revert";
 }
 
 function showHelp() {
