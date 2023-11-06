@@ -68,7 +68,7 @@ helpBtn.addEventListener("click", openHelp);
 // ------- variables ---------//
 let i = 0;
 let a = 0;
-let k = 0;
+let currentRow = 0;
 let crownCount = 0;
 
 /// -------functions------//
@@ -89,7 +89,7 @@ function playAgain() {
 
   i = 0;
   a = 0;
-  k = 0;
+  currentRow = 0;
   guessCode = [];
   secretCode = [];
   secretCodeGen();
@@ -187,7 +187,7 @@ function createPeg(peg) {
   peg.style.borderRadius = "50%";
   peg.style.position = "center";
 }
-k = 0;
+currentRow = 0;
 goldArrowDiv.style.gridArea = "1/1";
 arrowSect.appendChild(goldArrowDiv);
 goldArrowDiv.appendChild(goldArrow);
@@ -196,7 +196,7 @@ function checkGuess() {
   titleEl.innerText = "MASTERMIND";
   titleEl.style.color = "revert";
   titleEl.style.animation = "revert";
-  if (k >= 7 && guessCode.join() != secretCode.join()) {
+  if (currentRow >= 7 && guessCode.join() != secretCode.join()) {
     titleEl.innerText = "YOU LOSE!";
     titleEl.style.color = "red";
     titleEl.style.animation = "loseBlink 1s linear infinite";
@@ -205,11 +205,12 @@ function checkGuess() {
     tableSection.appendChild(playAgainBtn);
     checkButton.disabled = true;
     clearButton.disabled = true;
+    removeCurtain()
   } else if (i < 4) {
     titleEl.innerText = "FILL ROW FIRST!";
     titleEl.style.color = "cyan";
     titleEl.style.animation = "blinker 1s linear infinite";
-  } else if (k < 7) {
+  } else if (currentRow < 7) {
     if (guessCode.join() === secretCode.join()) {
       removeCurtain();
       titleEl.innerText = "YOU WIN!!!";
