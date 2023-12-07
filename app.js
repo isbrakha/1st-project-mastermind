@@ -234,7 +234,7 @@ function checkGuess() {
           createPeg(peg);
           peg.style.backgroundColor = "black";
           blackPegs.push(guessCode[j]);
-          feedBack[k].appendChild(peg);
+          feedBack[currentRow].appendChild(peg);
         } else {
           notBlack.push(secretCode[j]);
         }
@@ -258,12 +258,12 @@ function checkGuess() {
             peg.style.backgroundColor = "white";
             let idx = notBlack.indexOf(guessCode[j]);
             notBlack.splice(idx, 1);
-            feedBack[k].appendChild(peg);
+            feedBack[currentRow].appendChild(peg);
           }
         }
       }
       console.log(guessCode);
-      k++;
+      currentRow++;
       guessCode = [];
     }
   }
